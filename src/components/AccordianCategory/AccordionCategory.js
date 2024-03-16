@@ -8,13 +8,8 @@ import AccordianSubCategory from '../AccordianSubCategory/AccordianSubCategory';
 
 const AccordionCategory = ({ category }) => {
     const [isOpen, setIsOpen] = useState(null);
-    console.log(category)
-    const accordionsData = [
-        { title: "Language Settings", coloredText: "other properties", icon: <IoLanguageOutline /> },
-        { title: "General Settings", coloredText: "other properties", icon: <PiCirclesFour /> },
-        { title: "Font Settings", coloredText: "other properties", icon: <BsCollection /> },
-        { title: "Appearance Settings", coloredText: "other properties", icon: <PiCirclesFour /> },
-    ];
+
+
     const handleToggle = (idx) => setIsOpen((prevIdx) => (prevIdx === idx ? null : idx));
     return (
         <div className="rounded-lg mt-10  mx-3">
@@ -46,11 +41,7 @@ const AccordionCategory = ({ category }) => {
 
                             <div className="w-full ">
                                 <div className="relative ">
-                                    <div className="w-full ">
-                                        <AccordianSubCategory />
-                                        <AccordianSubCategory />
-                                        <AccordianSubCategory />
-                                    </div>
+                                    <AccordianSubCategory cat_id={data?.cat_id} />
                                 </div>
                             </div>
 

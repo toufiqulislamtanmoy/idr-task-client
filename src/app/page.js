@@ -6,7 +6,7 @@ import { IoMdSearch } from 'react-icons/io';
 const HomePage = async () => {
 
   const response = await axios.get('http://localhost:3001/api/category');
-  console.log(response.data)
+
   return (
     <div className='flex gap-5 h-[85vh] '>
       <div className="fixed overflow-hidden w-[350px] mt-14 bg-white">
