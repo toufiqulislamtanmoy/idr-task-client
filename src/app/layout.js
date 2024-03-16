@@ -1,5 +1,8 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/shared/Navbar/Navbar";
+import Sidebar from "@/components/shared/Sidebar/Sidebar";
+import RightSideBar from "@/components/shared/Sidebar/RightSideBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,7 +14,25 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div className="bg-[#EBEEF2] h-screen px-10 flex justify-between gap-5">
+          <div className="w-1/12 my-auto">
+            <Sidebar />
+          </div>
+          <div className="w-11/12 flex flex-col">
+            <Navbar />
+            <div className="flex flex-1 gap-5"> {/* flex-1 to make this div grow and fill remaining space */}
+              <div className="flex-1 "> {/* flex-1 to make this div grow and fill remaining space */}
+                {children}
+              </div>
+              <div className="w-[330px]">
+                <RightSideBar />
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </body>
     </html>
   );
 }
